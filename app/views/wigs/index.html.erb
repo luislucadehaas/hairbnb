@@ -10,20 +10,34 @@
           </button>
         </div>
       <% end %>
-        <ul class="list-group">
-        <% @wigs.each do |wig| %>
+
+
+    </div>
+  </div>
+</div>
+
+
+<% @wigs.each do |wig| %>
         <div class="card-trip">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
             <div class="card-trip-infos">
               <div>
-                <h2><%= link_to wig.title, wig_path(wig) %></h2>
+                <h2><%= link_to wig.title, wig_path(wig) %>kommt hier was</h2>
                   <p><%=wig.description%></p>
               </div>
                  <h2 class="card-trip-pricing"><%=wig.price%></h2>
              </div>
         </div>
         <% end %>
-      </ul>
+
+<!-- <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to wig.title, wig_path(wig) %></h2>
+      <p><%=wig.description%></p>
     </div>
+    <h2 class="card-trip-pricing"><%=wig.price%></h2>
   </div>
 </div>
+ -->
