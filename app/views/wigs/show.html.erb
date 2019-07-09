@@ -1,20 +1,22 @@
-<div class='container'>
-  <h1>this is the fucking wig you chose</h1>
-  <div class="cards">
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-      <div class="card-product-infos">
-        <h2><%= @wig.title %></h2>
-        <p>Description: <%= @wig.description %></p>
-        <p>Size: <%= @wig.size %></p>
-        <p>Color: <%= @wig.color %></p>
-      </div>
-      <div class="text-right">
-        <%= @wig.price %>
-      </div>
-    </div>
+  <h1>This is the fucking wig you chose</h1>
+<div class="wrapper">
+  <div class="card-picture">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+  </div>
 
-     <div class="card">
+  <div class="card-description">
+    <div class="card-product-infos">
+      <h2><%= @wig.title %></h2>
+      <p>Description: <%= @wig.description %></p>
+      <p>Size: <%= @wig.size %></p>
+      <p>Color: <%= @wig.color %></p>
+    </div>
+    <div class="text-right">
+      <%= @wig.price %>
+    </div>
+  </div>
+
+ <div class="card-booking">
       <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
         <h2>Rent this wig at:</h2>
 
@@ -26,6 +28,5 @@
       </div>
     </div>
 
-  </div>
 </div>
 
