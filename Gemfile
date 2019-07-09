@@ -29,4 +29,5 @@ group :development, :test do
   gem 'dotenv-rails'
 
   gem 'cloudinary', '~> 1.9.1'
+  gem 'carrierwave', '~> 1.2'
 end

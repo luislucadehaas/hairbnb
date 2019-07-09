@@ -4,7 +4,8 @@ class WigsController < ApplicationController
   end
 
   def create
-    @Wig = Wig.new(wig_params)
+    @wig = Wig.new(wig_params)
+    @wig.user = current_user
     if @wig.save
       redirect_to wig_path(@wig)
     else
@@ -15,6 +16,6 @@ class WigsController < ApplicationController
   private
 
   def wig_params
-    params.require(:wig).permit(:title, :photo, :description, :price, :color, :size)
+    params.require(:wig).permit(:title, :photo, :description, :price, :color, :size, :photo_cache)
   end
 end
