@@ -1,7 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 .search-form-control {
-  position: relative;
+  position: relative; //relative
 }
 
 .search-form-control .btn {
@@ -9,6 +9,9 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
+}
+.text {
+  padding: 5px;
 }
 
 .search-form-control .form-control {
@@ -35,6 +38,8 @@
   background: #3C4E89;
   color: white;
 }
+
+
 
 .card-trip {
   overflow: hidden;

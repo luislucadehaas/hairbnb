@@ -4,4 +4,5 @@ class WigsController < ApplicationController
     @wigs = Wig.all
   end
 
+
 end
