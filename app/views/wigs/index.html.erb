@@ -15,12 +15,12 @@
 <div class="container">
   <div class="row">
           <% @wigs.each do |wig| %>
-    <div class="col-sm">
+    <div class="col-sm-3">
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <img src="<%= wig.photo%>">
           <div class="card-trip-infos">
             <div>
-              <h2><%= link_to wig.title.truncate(22), wig_path(wig) %></h2>
+              <h2><%= link_to wig.title.truncate(20), wig_path(wig) %></h2>
             <p><%=wig.description.truncate(30)%></p>
           </div>
          <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
@@ -30,8 +30,6 @@
    <% end %>
   </div>
 </div>
-
-
 
 
 

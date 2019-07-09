@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_07_09_130340) do
-=======
 ActiveRecord::Schema.define(version: 2019_07_09_143800) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +47,8 @@ ActiveRecord::Schema.define(version: 2019_07_09_143800) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "image"
-=======
     t.string "photo"
->>>>>>> master
     t.index ["user_id"], name: "index_wigs_on_user_id"
   end
 
