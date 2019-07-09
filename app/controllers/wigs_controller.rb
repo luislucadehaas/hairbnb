@@ -1,8 +1,13 @@
 class WigsController < ApplicationController
+
   def new
     @wig = Wig.new
   end
-
+  
+  def show
+    @wig = Wig.find(params[:id])
+  end
+  
   def create
     @wig = Wig.new(wig_params)
     @wig.user = current_user
