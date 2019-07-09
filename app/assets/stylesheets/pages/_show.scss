@@ -1,0 +1,19 @@
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 80vh;
+  margin-top: 50px;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.main-image > img {
+  height: 80vh;
+}
+
+
