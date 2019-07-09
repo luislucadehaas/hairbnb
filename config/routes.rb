@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :wigs do
     resources :bookings, only: [:new, :create, :destroy]
   end
+
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
 end
