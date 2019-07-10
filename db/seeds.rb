@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Wig.destroy_all
 User.destroy_all
 max = User.create(email:'max@test.com', password:'testword')
@@ -14,3 +15,5 @@ Wig.create(user_id: max.id, description:'This is the most piraty wig of all pira
 Wig.create(user_id: louis.id, description:'Make yourself the diva you always wanted to be. With this natural feeling look you will rock any party!', price: 5000, color:'blonde', size:'m', title: 'Marys Madness')
 Wig.create(user_id: louis.id, description:'How often do experts say you should listen to Bob Marley? Reggae-larly. No ', price: 5000, color:'blonde', size:'m', title: 'Marys Madness')
 
+Wig.create(user_id: max.id, description:'stans hair.. stoeln in sleep', price: 13, color:'gray', size:'m', title: 'Stans´s hair')
+Wig.create(user_id: louis.id, description:'hip as fuck hair for thehippy berliner', price: 12, color:'brown', size:'xl', title: 'Rainbow Funky Clown wig')
