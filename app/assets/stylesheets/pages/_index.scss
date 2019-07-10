@@ -46,16 +46,18 @@ color:#FFCB54;
 }
 
 
+.column {
+  margin-top:20px;
+}
 
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 15px;
   position: relative;
-  top: 0;
   transition: top ease 0.3s;
   text-decoration: none;
+  color: #313131;
 }
 
 .card-trip > img {
@@ -90,11 +92,15 @@ color:#FFCB54;
   right: 16px;
   top: -20px;
   width: 40px;
+  height: 69px;
+
 }
 
 .card-trip:hover {
   border-bottom: solid;
   border-width: 5px;
   border-color: #FC5B55;
-  top: -5px;
+  margin-top: -5px;
+  transition: ease 0.2s;
+
 }
