@@ -22,9 +22,11 @@ class WigsController < ApplicationController
 
   def show
     @wig = Wig.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
+    raise
     @wig = Wig.new(wig_params)
     @wig.user = current_user
     if @wig.save
