@@ -6,8 +6,12 @@
   margin-top: 50px;
 }
 
+.price {
+  color:#465BA0;
+}
+
 .description{
-   text-decoration: underline;
+   text-decoration: none;
    color:   #000000;
 }
 
@@ -17,7 +21,6 @@
 
 .main-description h1 {
   border-bottom: solid 1px #bebdba;
-  margin-bottom: 38px;
 }
 
 .vertical-flex {

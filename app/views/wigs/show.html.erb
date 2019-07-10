@@ -5,10 +5,10 @@
     <div class="vertical-flex">
       <div class="main-description">
         <h1>Rent <%= @wig.title %></h1>
-        <p class="description">Description:</p><%= @wig.description %></p>
-        <p class="description">Color:</p> <p> <%= @wig.color %></p>
-        <p class="description">Size:</p><%= @wig.size %></p>
-        <p class="description">Price:</p><%= @wig.price%>€ </strong> per day</p>
+        <p class="description">Description: <%= @wig.description %></p>
+        <p class="description">Color: <%= @wig.color %></p>
+        <p class="description">Size: <%= @wig.size %></p>
+        <p class="description">Price: <strong class="price"><%= @wig.price%>€ </strong> per day</p>
       </div>
       <div class="form-wrapper">
         <p class=" subtitle">When do you want this wig?</p>
