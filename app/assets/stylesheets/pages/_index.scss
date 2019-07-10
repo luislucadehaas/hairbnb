@@ -11,8 +11,14 @@
   right: 8px;
 }
 .text {
-  padding: 5px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
+.bold-text {
+color:#FFCB54;
+}
+
 
 .search-form-control .form-control {
   height: 3.5rem;
@@ -45,10 +51,11 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 10px;
+  margin-top: 15px;
   position: relative;
   top: 0;
   transition: top ease 0.3s;
+  text-decoration: none;
 }
 
 .card-trip > img {

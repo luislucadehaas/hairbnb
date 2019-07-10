@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text">
-<h2>Rock these <%= @wigs.count %> Wigs</h2>
+<h2>Rock these <strong class= "bold-text"><%= @wigs.count %></strong> Wigs</h2>
 </div>
 <%= simple_form_for :search, url: wigs_path, method: :get do |f| %>
         <div class="search-form-control form-group">
@@ -16,11 +16,12 @@
   <div class="row">
           <% @wigs.each do |wig| %>
     <div class="col-sm-3">
+       <%= link_to wig_path(wig) do %>
       <div class="card-trip">
         <img src="<%= wig.photo%>">
           <div class="card-trip-infos">
             <div>
-              <h2><%= link_to wig.title.truncate(20), wig_path(wig) %></h2>
+              <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
             <p><%=wig.description.truncate(30)%></p>
           </div>
          <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
@@ -28,8 +29,12 @@
       </div>
     </div>
    <% end %>
+   <% end %>
   </div>
 </div>
+
+
+
 
 
 
