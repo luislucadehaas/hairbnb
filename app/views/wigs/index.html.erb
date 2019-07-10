@@ -15,14 +15,14 @@
 <div class="container">
   <div class="row">
           <% @wigs.each do |wig| %>
-    <div class="col-sm-3">
+    <div class="col-sm-4 col-xs-6 col-md-3 column" >
        <%= link_to wig_path(wig) do %>
       <div class="card-trip">
         <img src="<%= wig.photo%>">
           <div class="card-trip-infos">
             <div>
               <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
-            <p><%=wig.description.truncate(30)%></p>
+            <p><%=wig.description.truncate(20)%></p>
           </div>
          <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
         </div>
@@ -33,9 +33,13 @@
   </div>
 </div>
 
-
-
-
-
-
-
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This website is made with <strong>a wig</strong> in Wigland.
+  </div>
+</div>
