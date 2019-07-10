@@ -1,119 +1,40 @@
 <div class="banner">
-    <%= video_tag "banner.mp4", autoplay: true, loop: true, muted: true, id: "banner-video" %>
+    <%= video_tag "https://res.cloudinary.com/dc875ky15/video/upload/v1562677272/hairbnb_nlapqi.mp4", autoplay: true, loop: true, muted: true, id: "banner-video" %>
     <div class="banner-text">
-      <h1>If you <strong>suck,</strong> try a <strong>wig</strong>!</h1>
+      <h1>If you <strong>suck,</strong> rent a <strong>wig</strong>!</h1>
       <p>Top quality plastic, direct from China, cheap as dirt.</p>
-         <a class="btn btn-light" href="pages/wigs">Book a wig</a>
-         <a class="btn btn-light" href="pages/dashboard">Rent a wig</a>
+         <%= link_to "Book a wig", wigs_path, class: "banner-button" %>
+         <%= link_to "Offer a wig", dashboard_path, class: "banner-button" %>
     </div>
 </div>
 <br>
 <br>
 <div class="container">
 
+<h2>Pretty wigs to rock</h2>
+
+ <br>
+ <div class="container">
+
 <div class="row">
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+    <% @wigs.each do |wig| %>
+    <div class="col-sm-3">
+       <%= link_to wig_path(wig) do %>
+      <div class="card-trip">
+        <img src="<%= wig.photo%>">
+          <div class="card-trip-infos">
+            <div>
+              <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
+            <p><%=wig.color.truncate(30)%></p>
+          </div>
+         <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
+   <% end %>
   </div>
 </div>
-</div>
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
-      <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
- </div>
-<br>
-<div class="row">
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
-    <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
-      <div class="col-sm">
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-</div>
- </div>
-<br>
-<br>
 
   </div>
   <div class="footer">
@@ -126,8 +47,6 @@
     This website is made with <strong>a wig</strong> in Wigland.
   </div>
 </div>
-
-
 
 
 
