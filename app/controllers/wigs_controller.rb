@@ -26,7 +26,6 @@ class WigsController < ApplicationController
   end
 
   def create
-    raise
     @wig = Wig.new(wig_params)
     @wig.user = current_user
     if @wig.save

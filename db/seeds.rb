@@ -11,8 +11,9 @@ User.destroy_all
 max = User.create(email:'max@test.com', password:'testword')
 louis = User.create(email:'louis@test.com', password:'testword')
 stan = User.create(email:'stan@test.com', password:'testword')
-Wig.create(user_id: max.id, description:'funky', price: 15, color:'green', size:'m', title: 'kordula grün')
-Wig.create(user_id: louis.id, description:'boring', price: 15, color:'brown', size:'xl', title: 'walters deckel')
+Wig.create(user_id: max.id, description:'This is the most piraty wig of all piraty wigs. Yo will feel like a badass pirate if you rock this pirating wig.  Happy pirating!', price: 40, color:'black', size:'m', title: 'Jacky Sparowsi')
+Wig.create(user_id: louis.id, description:'Make yourself the diva you always wanted to be. With this natural feeling look you will rock any party!', price: 5000, color:'blonde', size:'m', title: 'Marys Madness')
+Wig.create(user_id: louis.id, description:'How often do experts say you should listen to Bob Marley? Reggae-larly. No ', price: 5000, color:'blonde', size:'m', title: 'Marys Madness')
 
 Wig.create(user_id: max.id, description:'stans hair.. stoeln in sleep', price: 13, color:'gray', size:'m', title: 'Stans´s hair')
 Wig.create(user_id: louis.id, description:'hip as fuck hair for thehippy berliner', price: 12, color:'brown', size:'xl', title: 'Rainbow Funky Clown wig')
