@@ -1,18 +1,17 @@
 <div class="container">
   <div class="horizontal-flex">
-    <div class="main-image">
-      <%= image_tag 'marge.jpg', class: 'wig-image'  %>
+    <div class="main-image"> <img src="<%= @wig.photo %>">
     </div>
     <div class="vertical-flex">
       <div class="main-description">
-        <h1><%= @wig.title %></h1>
-        <p>Description: <%= @wig.description %></p>
-        <p>Color: <%= @wig.color %></p>
-        <p>Size: <%= @wig.size %></p>
-        <p><strong>Price: <%= @wig.price%>€ </strong> per day</p>
+        <h1>Rent <%= @wig.title %></h1>
+        <p class="description">Description:</p><%= @wig.description %></p>
+        <p class="description">Color:</p> <p> <%= @wig.color %></p>
+        <p class="description">Size:</p><%= @wig.size %></p>
+        <p class="description">Price:</p><%= @wig.price%>€ </strong> per day</p>
       </div>
       <div class="form-wrapper">
-        <h2>Rent this wig at:</h2>
+        <p class=" subtitle">When do you want this wig?</p>
         <%= simple_form_for [@wig, @booking], method: "post" do |f| %>
         <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "click me..."%>
         <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "click me..." %>
