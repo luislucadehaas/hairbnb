@@ -18,7 +18,8 @@
     <div class="col-sm-4 col-xs-6 col-md-3 column" >
        <%= link_to wig_path(wig) do %>
       <div class="card-trip">
-        <img src="<%= wig.photo%>">
+        <!-- <img src="<%= wig.photo%>"> -->
+        <%= cl_image_tag("#{wig.photo}", :transformation=>[:gravity=>"face"])%>
           <div class="card-trip-infos">
             <div>
               <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>

@@ -35,10 +35,22 @@ class WigsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+    def destroy
+    @wig = Wig.find(params[:id])
+    @wig.destroy
+    redirect_to dashboard_path
+  end
+
+
   private
 
   def wig_params
     params.require(:wig).permit(:title, :photo, :description, :price, :color, :size, :photo_cache)
-
   end
 end
