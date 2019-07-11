@@ -37,7 +37,7 @@ class WigsController < ApplicationController
     @wig = Wig.new(wig_params)
     @wig.user = current_user
     if @wig.save
-      redirect_to wig_path(@wig)
+       redirect_to dashboard_owner_path
     else
       render 'new'
     end
