@@ -14,12 +14,12 @@ class WigsController < ApplicationController
       @wigs = Wig.all
     end
 
-    @wigs = Wig.where.not(latitude: nil, longitude: nil)
-
     @markers = @wigs.map do |wig|
       {
         lat: wig.latitude,
-        lng: wig.longitude
+        lng: wig.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { wig: wig }),
+        image_url: helpers.asset_url('https://res.cloudinary.com/dc875ky15/image/upload/v1562854525/man-bald_1f468-200d-1f9b2_ghllek.png')
       }
     end
   end
