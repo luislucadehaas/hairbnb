@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.wig = @wig
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to dashboard_client_path
     else
       render @wig
     end

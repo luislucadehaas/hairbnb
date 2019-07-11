@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
     resources :wigs, only: [:new, :create, :destroy]
 
-  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  get 'dashboard_client', to: 'pages#dashboard_client', as: :dashboard_client
+  get 'dashboard_owner', to: 'pages#dashboard_owner', as: :dashboard_owner
 end

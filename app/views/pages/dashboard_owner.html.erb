@@ -1,0 +1,64 @@
+<div class="container">
+<br>
+<h2>My wigboard</h2>
+<br>
+<p>Peter Smith 👤</p>
+<p>Expert wigger ⭐️⭐️</p>
+<p>63 wigs rentals 🎯</p>
+<br>
+<h3>My wigs</h3>
+<br>
+
+  <% if @current_user.wigs.empty? %>
+    <p>Offer your first wig!</p>
+  <% else %>
+      <% @current_user.wigs.each do |wig| %>
+      <%= link_to wig_path(wig) do %>
+    <div class="card-request">
+     <img src="<%= wig.photo %>">
+       <div class="card-request-infos">
+    <h2><%= wig.title %></h2>
+    <p><%= wig.description %></p>
+    <p><%= wig.price %>€</p>
+   </div>
+      </div>
+<% end %>
+  <% end %>
+<% end %>
+  <%= link_to "Offer a new wig", new_wig_path, class: "banner-button" %>
+<br>
+<br>
+<h3>Reservations</h3>
+
+<% if @current_user.bookings_as_owner.empty? %>
+    <p>You don't have any reservations yet :/</p>
+  <% else %>
+      <% @bookings_as_owner.each do |booking| %>
+      <%= link_to wig_path(booking.wig) do %>
+
+    <div class="card-request">
+     <img src="<%= booking.wig.photo %>">
+       <div class="card-request-infos">
+    <h2><%= booking.wig.title %></h2>
+    <p><strong>From <%= booking.start_date%> to <%= booking.end_date%></strong></p>
+    <p><%= booking.wig.description %></p>
+    <p><%= booking.wig.price %>€</p>
+   </div>
+      </div>
+  <% end %>
+  <% end %>
+      </div>
+
+  </div>
+<% end %>
+  </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This website is made with <strong>a wig</strong> in Wigland.
+  </div>
+    </div>

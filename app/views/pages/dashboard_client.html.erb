@@ -1,0 +1,48 @@
+<div class="container">
+<br>
+  <h2>My bookings</h2>
+<br>
+
+<% if @current_user.bookings.empty? %>
+    <p>You don't have any booking!</p>
+  <% else %>
+      <% @bookings.each do |booking| %>
+        <%= link_to wig_path(booking.wig) do %>
+      <div class="card-request">
+
+        <img src="<%= booking.wig.photo %>">
+        <div class="card-request-infos">
+          <h2><%= booking.wig.title %></h2>
+          <p><strong>From <%= booking.start_date%> to <%= booking.end_date%></strong></p>
+          <div class="request-ribbon" style="background-color: #39CA73">
+            <span>Confirmed</span>
+          </div>
+          <p><%= booking.wig.description %></p>
+          <p><%= booking.wig.price %>€</p>
+        </div>
+      </div>
+        <% end %>
+    <% end %>
+
+  </div>
+</div>
+<% end %>
+
+<br>
+<br>
+
+  </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This website is made with <strong>a wig</strong> in Wigland.
+  </div>
+    </div>
+
+
+
+
