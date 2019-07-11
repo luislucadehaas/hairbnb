@@ -6,9 +6,9 @@ class WigsController < ApplicationController
       @wigs = Wig.all
     elsif params[:search].present?
       sql_query = " \
-        wigs.title @@ :search \
-        OR wigs.description @@ :search \
-        OR wigs.color @@ :search \
+      wigs.title @@ :search \
+      OR wigs.description @@ :search \
+      OR wigs.color @@ :search \
       "
       @wigs = Wig.where(sql_query, search: "%#{params["search"]["query"]}%")
     else
@@ -36,12 +36,16 @@ class WigsController < ApplicationController
   end
 
   def edit
+    @wig = Wig.find(params[:id])
   end
 
   def update
+    @wig = Wig.find(params[:id])
+    @wig.update(wig_params)
+    redirect_to wig_path(params[:id])
   end
 
-    def destroy
+  def destroy
     @wig = Wig.find(params[:id])
     @wig.destroy
     redirect_to dashboard_path
