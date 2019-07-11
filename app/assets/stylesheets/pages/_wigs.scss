@@ -8,15 +8,39 @@
   bottom: 8px;
   right: 8px;
 }
-.text {
+
+.header {
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 200px;
   margin-bottom: 20px;
 }
-.bold-text {
-color:#FFCB54;
+
+#map {
+  position: sticky;
+  top: 0;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
+.bold-text {
+  color:#FFCB54;
+
+}
+.container {
+ max-width: 1361px;
+}
+
+#card-container {
+  display: flex;
+  margin: 0 auto;
+}
+.cards-all {
+  flex: 1;
+}
+.search {
+  padding-right: 100px;
+  padding-left: 100px;
+}
 
 .search-form-control .form-control {
   height: 3.5rem;
@@ -43,7 +67,6 @@ color:#FFCB54;
   color: white;
 }
 
-
 .column {
   margin-top:20px;
 }
@@ -59,7 +82,6 @@ color:#FFCB54;
 }
 
 .card-trip > img {
-  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -100,5 +122,5 @@ color:#FFCB54;
   border-color: #FC5B55;
   margin-top: -5px;
   transition: ease 0.2s;
-
+  box-shadow: 0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025);
 }

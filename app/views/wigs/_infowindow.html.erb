@@ -1,0 +1,17 @@
+<!-- <div class="info"><%= wig.title %></div> -->
+
+
+<div class="cards-all-info">
+
+         <%= link_to wig_path(wig) do %>
+        <div class="cardinfo">
+          <img class= "image" src="<%= wig.photo%>">
+            <div class="cardinfos">
+              <div class="words">
+                <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
+                <p><%=wig.price%>€</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     <% end %>
