@@ -10,6 +10,13 @@
         <p class="description">Size: <%= @wig.size %></p>
         <p class="description">Price: <strong class="price"><%= @wig.price%>€ </strong> per day</p>
       </div>
+      <% if current_user.id == @wig.user_id %>
+      <div class="wig-owner">
+        <p class=" subtitle">You have put this wig online.</p>
+        <%= link_to "Edit", edit_wig_path, class: "btn btn-flat-show" %>
+        <%= link_to "Delete", wig_path(@wig), method: :delete, class: "btn btn-flat-show" %>
+      </div>
+      <% else %>
       <div class="form-wrapper">
         <p class=" subtitle">When do you want this wig?</p>
         <%= simple_form_for [@wig, @booking], method: "post" do |f| %>
@@ -18,7 +25,7 @@
         <%= f.button :submit, "Send Wiquest", class: "btn btn-flat" %>
         <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
-
