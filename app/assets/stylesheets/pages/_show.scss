@@ -6,6 +6,10 @@
   margin-top: 50px;
 }
 
+p{
+  margin-block-end: 5px;
+}
+
 .description{
    text-decoration: underline;
    color:   #000000;
@@ -17,7 +21,7 @@
 
 .main-description h1 {
   border-bottom: solid 1px #bebdba;
-  margin-bottom: 38px;
+  margin-bottom: 21px;
 }
 
 .vertical-flex {
@@ -26,7 +30,9 @@
   justify-content: space-between;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16);
   padding: 36px;
+  overflow: auto;
 }
+
 .main-description{
 
 }
@@ -43,6 +49,7 @@
   border-radius: 4px;
   background: #465BA0;
   transition: background 0.3s ease;
+  margin: 10px;
 }
 
 
