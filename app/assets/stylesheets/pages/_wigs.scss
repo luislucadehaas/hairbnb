@@ -11,14 +11,36 @@
 
 .header {
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 200px;
   margin-bottom: 20px;
 }
 
-.bold-text {
-color:#FFCB54;
+#map {
+  position: sticky;
+  top: 0;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
+.bold-text {
+  color:#FFCB54;
+
+}
+.container {
+ max-width: 1361px;
+}
+
+#card-container {
+  display: flex;
+  margin: 0 auto;
+}
+.cards-all {
+  flex: 1;
+}
+.search {
+  padding-right: 100px;
+  padding-left: 100px;
+}
 
 .search-form-control .form-control {
   height: 3.5rem;
