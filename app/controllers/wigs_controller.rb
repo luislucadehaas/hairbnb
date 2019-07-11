@@ -1,5 +1,4 @@
 class WigsController < ApplicationController
-
   def index
 
     if params[:search].present? && params["search"]["query"] == ""
@@ -13,6 +12,15 @@ class WigsController < ApplicationController
       @wigs = Wig.where(sql_query, search: "%#{params["search"]["query"]}%")
     else
       @wigs = Wig.all
+    end
+
+    @wigs = Wig.where.not(latitude: nil, longitude: nil)
+
+    @markers = @wigs.map do |wig|
+      {
+        lat: wig.latitude,
+        lng: wig.longitude
+      }
     end
   end
 
@@ -38,7 +46,8 @@ class WigsController < ApplicationController
   private
 
   def wig_params
-    params.require(:wig).permit(:title, :photo, :description, :price, :color, :size, :photo_cache)
+    params.require(:wig).permit(:title, :photo, :description, :price, :color, :size, :photo_cache, :address
+    )
 
   end
 end
