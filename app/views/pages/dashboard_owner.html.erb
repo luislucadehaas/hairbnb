@@ -38,13 +38,21 @@
 
     <div class="card-request">
      <img src="<%= booking.wig.photo %>">
-       <div class="card-request-infos">
+       <div class="card-request-infos-own">
     <h2><%= booking.wig.title %></h2>
     <p><strong>From <%= booking.start_date%> to <%= booking.end_date%></strong></p>
     <p class="hey"><%= booking.message%></p>
     <p><%= booking.wig.price %>€</p>
-
+    <% if booking.status == "accept" %>
+    <h7 class="text-success">you accepted this</h7>
+    <% elsif booking.status == "decline" %>
+    <h7 class="text-danger">you declined this</h7>
+    <% else %>
+    <%= link_to "Accept", wig_booking_path(booking.wig, booking, status: "accept"), method: :patch,  class: "request-button-accept" %>
+    <%= link_to "Decline", wig_booking_path(booking.wig, booking, status: "decline"), method: :patch,  class: "request-button-decline" %>
+    <% end %>
    </div>
+
       </div>
   <% end %>
   <% end %>
