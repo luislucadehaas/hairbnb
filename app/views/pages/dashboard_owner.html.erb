@@ -1,14 +1,19 @@
 <div class="container">
 <br>
-<h2>My wigboard</h2>
-<br>
-<p>Peter Smith 👤</p>
-<p>Expert wigger ⭐️⭐️</p>
-<p>63 wigs rentals 🎯</p>
-<br>
-<h3>My wigs</h3>
 <br>
 
+<div class="dashboard-user">
+    <img width="85" class="rounded-circle alone" src="https://avatars0.githubusercontent.com/u/49415784?v=4" />
+    <div class="user-infos">
+      <h2>Stan L.</h2>
+      <p>Expert wigger ⭐️⭐️</p>
+      <p>63 wigs rentals 🎯</p>
+    </div>
+</div>
+
+<br>
+
+<h3>My wigs</h3>
   <% if @current_user.wigs.empty? %>
     <p>Offer your first wig!</p>
   <% else %>
@@ -61,13 +66,5 @@
   </div>
 <% end %>
   </div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This website is made with <strong>a wig</strong> in Wigland.
-  </div>
-    </div>
+<%= render 'shared/footer' %>
+
