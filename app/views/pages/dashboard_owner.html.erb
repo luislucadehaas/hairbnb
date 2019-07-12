@@ -41,8 +41,9 @@
        <div class="card-request-infos">
     <h2><%= booking.wig.title %></h2>
     <p><strong>From <%= booking.start_date%> to <%= booking.end_date%></strong></p>
-    <p><%= booking.wig.description %></p>
+    <p class="hey"><%= booking.message%></p>
     <p><%= booking.wig.price %>€</p>
+
    </div>
       </div>
   <% end %>
