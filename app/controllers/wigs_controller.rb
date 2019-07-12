@@ -1,6 +1,7 @@
 class WigsController < ApplicationController
-  def index
+  skip_before_action :authenticate_user! , only: [:index, :show]
 
+  def index
     if params[:search].present? && params["search"]["query"] == ""
       @wigs = Wig.all
     elsif params[:search].present?

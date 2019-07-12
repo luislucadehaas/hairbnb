@@ -10,7 +10,25 @@
         <p class="description">Size: <%= @wig.size %></p>
         <p class="description">Price: <strong class="price"><%= @wig.price%>€ </strong> per day</p>
       </div>
-      <% if current_user.id == @wig.user_id %>
+      <% if current_user.blank? %>
+      <div class="form-wrapper">
+        <p class=" subtitle">When do you want this wig?</p>
+        <%= simple_form_for [@wig, @booking], method: "post" do |f| %>
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "click me..."%>
+            </div>
+            <div class="col">
+              <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "click me..." %>
+            </div>
+          </div>
+        </form>
+        <%= f.input :message, placeholder: "Add a message", id: "message_input" %>
+        <p>You need to log-in to book a wig</p>
+        <% end %>
+      </div>
+      <% elsif current_user.id == @wig.id %>
       <div class="wig-owner">
         <p class=" subtitle">You have put this wig online.</p>
         <%= link_to "Edit", edit_wig_path, class: "btn btn-flat-show" %>
@@ -38,3 +56,7 @@
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>
+
+
+
