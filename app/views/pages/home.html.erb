@@ -1,64 +1,41 @@
 <div class="banner">
-    <%= video_tag "https://res.cloudinary.com/dc875ky15/video/upload/v1562677272/hairbnb_nlapqi.mp4", autoplay: true, loop: true, muted: true, id: "banner-video" %>
-    <div class="banner-text">
-      <h1>If you <strong>suck,</strong> rent a <strong>wig</strong>!</h1>
-      <p>Top quality plastic, direct from China, cheap as dirt.</p>
-         <%= link_to "Book a wig", wigs_path, class: "banner-button" %>
-         <%= link_to "Offer a wig", dashboard_path, class: "banner-button" %>
-    </div>
+  <%= video_tag "https://res.cloudinary.com/dc875ky15/video/upload/v1562677272/hairbnb_nlapqi.mp4", autoplay: true, loop: true, muted: true, id: "banner-video" %>
+  <div class="banner-text">
+    <h1>If you <strong>suck,</strong> rent a <strong>wig</strong>!</h1>
+    <p>Top quality plastic, direct from China, cheap as dirt.</p>
+    <%= link_to "Book a wig", wigs_path, class: "banner-button" %>
+    <%= link_to "Offer a wig", dashboard_path, class: "banner-button" %>
+  </div>
 </div>
 <br>
 <br>
 <div class="container">
 
-<h2>Pretty wigs to rock</h2>l
+  <h2>Pretty wigs to rock</h2>l
 
- <br>
- <div class="container">
+  <br>
+  <div class="container">
 
-<div class="row">
-    <% @wigs.each do |wig| %>
-    <div class="col-sm-3">
+    <div class="row">
+      <% @wigs.each do |wig| %>
+      <div class="col-sm-3">
        <%= link_to wig_path(wig) do %>
-      <div class="card-trip">
+       <div class="card-trip">
          <%= cl_image_tag("#{wig.photo}", :transformation=>[:gravity=>"face"])%>
-          <div class="card-trip-infos">
-            <div>
-              <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
+         <div class="card-trip-infos">
+          <div>
+            <h2 class="wig-title"><%=wig.title.truncate(20)%></h2>
             <p><%=wig.color.truncate(30)%></p>
           </div>
-         <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
+          <h2 class="card-trip-pricing"><%=wig.price%>€</h2>
         </div>
       </div>
       <% end %>
     </div>
-   <% end %>
+    <% end %>
   </div>
 </div>
 <br>
 <br>
-  </div>
-  <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This website is made with <strong>a wig</strong> in Wigland.
-  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
